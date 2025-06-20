@@ -3,31 +3,76 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Not Rocket Science</title>
+        <title>Not Rocket Science™</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
-        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-        <link rel="icon" href="favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <style>
+            html, body {
+                font-family: "Instrument Sans", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 500;
+                font-style: normal;
+                font-variation-settings:
+                  "wdth" 100;
+            }
 
+            h1, h2, h3 {
+                font-family: "Instrument Serif", serif;
+            }
+
+            ::selection {
+                color:white;
+                background: #b1dd40;
+            }
+        </style>
+
+        <style type="text/tailwindcss">
+            @theme {
+            --color-grun: #031403;
+        }
+        </style>
+
+        <link rel="icon" href="favicon.ico">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
-    <body class="absolute w-full h-full flex flex-col">
+    <body class="absolute w-full h-full flex flex-col bg-[#fbfefb] text-[#0b470b] dark:bg-[#031403] dark:text-[#e9ff92]">
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <p class="flex-grow flex flex-col items-center justify-center font-medium text-lg">
-            What could possibly go wrong? 🚀 🍌
-        </p>
+        <div class="flex-grow flex flex-col items-center justify-center">
+            <div class="flex flex-col md:flex-row md:space-x-12">
+                <div class="">
+                    <h2 class="text-3xl italic">It's</h2>
+                    <h1 class="text-7xl font-bold">Not Rocket Science™</h1>
+                    <h2 class="mt-4 text-2xl italic">Just some great companies, people, ideas and projects I dedicate my time to.</h2>
 
-        <p class="w-full flex justify-center items-center text-gray-400 text-sm py-10 space-x-6">
-            <a class="hover:text-blue-400" href="mailto:mathilde@notrocketscience.dk" title="I dare you!">
-                <span class="underline">Find out</span> 📧
+
+                    <a class="mt-8 block underline hover:no-underline" href="mailto:its@notrocketscience.dk" title="Hello!">its@notrocketscience.dk</a>
+                    <a class="mt-2 block hover:underline hover:text-blue-400" href="tel:+4593967688" title="Hello?">+45 93 96 76 88</a>
+                </div>
+
+                <div class="space-y-2 mt-6">
+                </div>
+            </div>
+        </div>
+
+        <p class="w-full flex justify-center items-center text-sm py-10 space-x-6">
+            <span>© Not Rocket Science™ 2021 - 2025</span>
+            <span>📍 Aarhus, Denmark</span>
+            <a
+                class="hover:text-blue-400"
+                href="https://datacvr.virk.dk/enhed/virksomhed/42453951"
+                target="_blank"
+                title="Open company records in the danish Central Business Register (CVR)"
+            >
+                Not Rocket Science ApS (DK42453951) ↗
             </a>
-            <span>Not Rocket Science</span>
         </p>
 
         <script src="js/main.js"></script>
