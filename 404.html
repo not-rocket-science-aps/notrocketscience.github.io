@@ -53,13 +53,30 @@
         @media (prefers-color-scheme: dark) {
             :focus-visible { outline-color: #e2d6c0; }
         }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .float { animation: float 3s ease-in-out infinite; }
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 9;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+        }
     </style>
 </head>
 <body class="bg-nrs-sand text-nrs-brown dark:bg-nrs-brown dark:text-nrs-sand font-sans antialiased min-h-screen flex items-center justify-center px-6">
     <main class="text-center" role="main">
-        <h1 class="font-serif text-5xl sm:text-6xl text-nrs-green dark:text-nrs-sand">404 &mdash; Page not found</h1>
+        <p class="text-6xl float mb-6" aria-hidden="true">🧭</p>
+        <h1 class="font-serif italic text-5xl sm:text-6xl text-nrs-green dark:text-nrs-sand">404</h1>
         <p class="mt-4 text-lg text-nrs-brown/60 dark:text-nrs-sand/50">This page doesn't exist. It's not rocket science&thinsp;&mdash;&thinsp;it's just missing.</p>
-        <a href="/" class="inline-block mt-8 px-6 py-3 bg-nrs-green dark:bg-nrs-sand text-nrs-sand dark:text-nrs-green rounded-lg font-medium hover:opacity-90 transition-opacity">
+        <a href="/" class="inline-block mt-8 px-6 py-3 bg-nrs-green dark:bg-nrs-sand text-nrs-sand dark:text-nrs-green rounded-lg font-medium hover:scale-[1.03] transition-transform">
             Back to home
         </a>
     </main>

@@ -102,6 +102,17 @@
         @media (prefers-color-scheme: dark) {
             :focus-visible { outline-color: #e2d6c0; }
         }
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 9;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+        }
     </style>
 
     <script src="/js/main.js" defer></script>
@@ -117,31 +128,31 @@
 
         <nav class="space-y-3" aria-label="Social media links">
             <a href="https://linkedin.com/company/notrocketscience" rel="noopener noreferrer" target="_blank" aria-label="LinkedIn (opens in new tab)"
-               class="flex items-center justify-between w-full px-5 py-4 border border-nrs-green/15 dark:border-nrs-sand/15 rounded-xl hover:bg-nrs-green hover:text-nrs-sand dark:hover:bg-nrs-sand dark:hover:text-nrs-green transition-colors group">
+               class="flex items-center justify-between w-full px-5 py-4 border border-nrs-green/15 dark:border-nrs-sand/15 rounded-xl hover:bg-nrs-green hover:text-nrs-sand dark:hover:bg-nrs-sand dark:hover:text-nrs-green transition-all duration-200 hover:scale-[1.02] group">
                 <span class="font-medium">LinkedIn</span>
                 <span class="text-xs opacity-50 group-hover:opacity-70" aria-hidden="true">&nearr;</span>
             </a>
 
             <a href="https://github.com/notrocketscience" rel="noopener noreferrer" target="_blank" aria-label="GitHub (opens in new tab)"
-               class="flex items-center justify-between w-full px-5 py-4 border border-nrs-green/15 dark:border-nrs-sand/15 rounded-xl hover:bg-nrs-green hover:text-nrs-sand dark:hover:bg-nrs-sand dark:hover:text-nrs-green transition-colors group">
+               class="flex items-center justify-between w-full px-5 py-4 border border-nrs-green/15 dark:border-nrs-sand/15 rounded-xl hover:bg-nrs-green hover:text-nrs-sand dark:hover:bg-nrs-sand dark:hover:text-nrs-green transition-all duration-200 hover:scale-[1.02] group">
                 <span class="font-medium">GitHub</span>
                 <span class="text-xs opacity-50 group-hover:opacity-70" aria-hidden="true">&nearr;</span>
             </a>
 
             <a href="mailto:its@notrocketscience.dk" aria-label="Email its@notrocketscience.dk"
-               class="flex items-center justify-between w-full px-5 py-4 border border-nrs-green/15 dark:border-nrs-sand/15 rounded-xl hover:bg-nrs-green hover:text-nrs-sand dark:hover:bg-nrs-sand dark:hover:text-nrs-green transition-colors group">
+               class="flex items-center justify-between w-full px-5 py-4 border border-nrs-green/15 dark:border-nrs-sand/15 rounded-xl hover:bg-nrs-green hover:text-nrs-sand dark:hover:bg-nrs-sand dark:hover:text-nrs-green transition-all duration-200 hover:scale-[1.02] group">
                 <span class="font-medium">Email</span>
                 <span class="text-xs opacity-50 group-hover:opacity-70">its@notrocketscience.dk</span>
             </a>
 
             <a href="https://maps.app.goo.gl/61Tm56pidkFtt23t9" rel="noopener noreferrer" target="_blank" aria-label="Address: Havnegade 2B, 1. sal, Aarhus (opens in Google Maps)"
-               class="flex items-center justify-between w-full px-5 py-4 border border-nrs-green/15 dark:border-nrs-sand/15 rounded-xl hover:bg-nrs-green hover:text-nrs-sand dark:hover:bg-nrs-sand dark:hover:text-nrs-green transition-colors group">
+               class="flex items-center justify-between w-full px-5 py-4 border border-nrs-green/15 dark:border-nrs-sand/15 rounded-xl hover:bg-nrs-green hover:text-nrs-sand dark:hover:bg-nrs-sand dark:hover:text-nrs-green transition-all duration-200 hover:scale-[1.02] group">
                 <span class="font-medium">Address</span>
                 <span class="text-xs opacity-50 group-hover:opacity-70">Havnegade 2B, 1. sal <span aria-hidden="true">&nearr;</span></span>
             </a>
 
             <a href="/contact.vcf" download aria-label="Save contact as vCard file"
-               class="flex items-center justify-between w-full px-5 py-4 border border-nrs-green/15 dark:border-nrs-sand/15 rounded-xl hover:bg-nrs-green hover:text-nrs-sand dark:hover:bg-nrs-sand dark:hover:text-nrs-green transition-colors group">
+               class="flex items-center justify-between w-full px-5 py-4 border border-nrs-green/15 dark:border-nrs-sand/15 rounded-xl hover:bg-nrs-green hover:text-nrs-sand dark:hover:bg-nrs-sand dark:hover:text-nrs-green transition-all duration-200 hover:scale-[1.02] group">
                 <span class="font-medium">Save contact</span>
                 <span class="text-xs opacity-50 group-hover:opacity-70">vCard <span aria-hidden="true">&darr;</span></span>
             </a>

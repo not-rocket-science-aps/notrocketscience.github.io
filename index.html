@@ -120,9 +120,7 @@
             border-radius: 2px;
         }
         @media (prefers-color-scheme: dark) {
-            :focus-visible {
-                outline-color: #e2d6c0;
-            }
+            :focus-visible { outline-color: #e2d6c0; }
         }
         .skip-link {
             position: absolute;
@@ -134,8 +132,37 @@
             color: #e2d6c0;
             font-size: 0.875rem;
         }
-        .skip-link:focus {
-            left: 0;
+        .skip-link:focus { left: 0; }
+
+        /* Subtle grain texture */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 9;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+        }
+
+        /* Arrow slide on hover */
+        .arrow-slide span[aria-hidden] {
+            display: inline-block;
+            transition: transform 0.2s ease;
+        }
+        .arrow-slide:hover span[aria-hidden] {
+            transform: translateX(3px);
+        }
+
+        /* Gentle pulse for "coming soon" */
+        @keyframes soft-pulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.7; }
+        }
+        .pulse-soft {
+            animation: soft-pulse 3s ease-in-out infinite;
         }
     </style>
 
@@ -183,11 +210,11 @@
 
     <header class="pt-16 sm:pt-24 px-6">
         <div class="max-w-2xl mx-auto">
-            <p class="font-serif text-xl sm:text-2xl italic text-nrs-brown/70 dark:text-nrs-sand/70">It's</p>
+            <p class="font-serif text-3xl sm:text-4xl italic text-nrs-brown/50 dark:text-nrs-sand/50 -mb-2 sm:-mb-3">It's</p>
             <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-nrs-green dark:text-nrs-sand leading-tight">
-                Not Rocket Science&trade;
+                Not Rocket Science<span class="inline-block text-lg sm:text-xl align-top mt-1 sm:mt-2 ml-0.5 rotate-6 text-nrs-green/60 dark:text-nrs-sand/50">&trade;</span>
             </h1>
-            <p class="mt-4 text-lg sm:text-xl italic text-nrs-brown/70 dark:text-nrs-sand/60 max-w-lg leading-relaxed">
+            <p class="mt-6 text-lg sm:text-xl italic text-nrs-brown/70 dark:text-nrs-sand/60 max-w-lg leading-relaxed">
                 Just some great companies, people, ideas and projects I dedicate my time to.
             </p>
         </div>
@@ -197,50 +224,53 @@
         <div class="max-w-2xl mx-auto">
 
             <!-- Projects -->
-            <section aria-labelledby="projects-heading">
-                <h2 id="projects-heading" class="font-serif text-2xl sm:text-3xl text-nrs-green dark:text-nrs-sand mb-8">What I work on</h2>
+            <section aria-labelledby="projects-heading" class="animate-in-d3">
+                <h2 id="projects-heading" class="font-serif italic text-2xl sm:text-3xl text-nrs-green dark:text-nrs-sand mb-8">What I work on</h2>
 
-                <div class="space-y-8">
-                    <article>
+                <div class="space-y-4">
+                    <article class="group p-5 -mx-5 rounded-xl transition-all duration-200 hover:bg-nrs-green/[0.03] dark:hover:bg-nrs-sand/[0.04] hover:pl-7 border-l-2 border-transparent hover:border-nrs-green/40 dark:hover:border-nrs-sand/30">
                         <div class="flex items-baseline gap-3 flex-wrap">
                             <h3 class="font-sans font-semibold text-lg">JKBSN ApS</h3>
                             <span class="text-sm text-nrs-brown/50 dark:text-nrs-sand/40">Freelance</span>
                         </div>
                         <p class="mt-1 text-nrs-brown/70 dark:text-nrs-sand/60 leading-relaxed">My freelance practice. I design and build software &mdash; from early-stage products to scaling platforms. Hands-on architecture and code.</p>
-                        <a href="https://mathiasjakobsen.dk" rel="noopener" target="_blank" aria-label="mathiasjakobsen.dk (opens in new tab)" class="inline-block mt-2 text-sm text-nrs-green dark:text-nrs-sand/80 hover:text-nrs-green-light dark:hover:text-nrs-sand underline underline-offset-4 decoration-nrs-green/30 dark:decoration-nrs-sand/30 hover:decoration-nrs-green/60 dark:hover:decoration-nrs-sand/60 transition-colors">mathiasjakobsen.dk <span aria-hidden="true">&nearr;</span></a>
+                        <a href="https://mathiasjakobsen.dk" rel="noopener" target="_blank" aria-label="mathiasjakobsen.dk (opens in new tab)" class="arrow-slide inline-block mt-2 text-sm text-nrs-green dark:text-nrs-sand/80 hover:text-nrs-green-light dark:hover:text-nrs-sand underline underline-offset-4 decoration-nrs-green/30 dark:decoration-nrs-sand/30 hover:decoration-nrs-green/60 dark:hover:decoration-nrs-sand/60 transition-colors">mathiasjakobsen.dk <span aria-hidden="true">&nearr;</span></a>
                     </article>
 
-                    <article>
+                    <article class="group p-5 -mx-5 rounded-xl transition-all duration-200 hover:bg-nrs-green/[0.03] dark:hover:bg-nrs-sand/[0.04] hover:pl-7 border-l-2 border-transparent hover:border-nrs-green/40 dark:hover:border-nrs-sand/30">
                         <div class="flex items-baseline gap-3 flex-wrap">
                             <h3 class="font-sans font-semibold text-lg">Efektive</h3>
                             <span class="text-sm text-nrs-brown/50 dark:text-nrs-sand/40">Investor &amp; fractional CTO</span>
                         </div>
                         <p class="mt-1 text-nrs-brown/70 dark:text-nrs-sand/60 leading-relaxed">A Danish freelance marketplace that connects businesses with local talent. 120+ categories, milestone payments, the whole deal. I invest and help build the tech.</p>
-                        <a href="https://efektive.dk" rel="noopener" target="_blank" aria-label="efektive.dk (opens in new tab)" class="inline-block mt-2 text-sm text-nrs-green dark:text-nrs-sand/80 hover:text-nrs-green-light dark:hover:text-nrs-sand underline underline-offset-4 decoration-nrs-green/30 dark:decoration-nrs-sand/30 hover:decoration-nrs-green/60 dark:hover:decoration-nrs-sand/60 transition-colors">efektive.dk <span aria-hidden="true">&nearr;</span></a>
+                        <a href="https://efektive.dk" rel="noopener" target="_blank" aria-label="efektive.dk (opens in new tab)" class="arrow-slide inline-block mt-2 text-sm text-nrs-green dark:text-nrs-sand/80 hover:text-nrs-green-light dark:hover:text-nrs-sand underline underline-offset-4 decoration-nrs-green/30 dark:decoration-nrs-sand/30 hover:decoration-nrs-green/60 dark:hover:decoration-nrs-sand/60 transition-colors">efektive.dk <span aria-hidden="true">&nearr;</span></a>
                     </article>
 
-                    <article>
+                    <article class="group p-5 -mx-5 rounded-xl transition-all duration-200 hover:bg-nrs-green/[0.03] dark:hover:bg-nrs-sand/[0.04] hover:pl-7 border-l-2 border-transparent hover:border-nrs-green/40 dark:hover:border-nrs-sand/30">
                         <div class="flex items-baseline gap-3 flex-wrap">
                             <h3 class="font-sans font-semibold text-lg">VoiceArchive</h3>
                             <span class="text-sm text-nrs-brown/50 dark:text-nrs-sand/40">Board member</span>
                         </div>
                         <p class="mt-1 text-nrs-brown/70 dark:text-nrs-sand/60 leading-relaxed">Full-service voiceover agency. They cast, record, and produce audio for brands like LEGO, Vimeo, and Momondo &mdash; in pretty much any language. I sit on the board.</p>
-                        <a href="https://voicearchive.com" rel="noopener" target="_blank" aria-label="voicearchive.com (opens in new tab)" class="inline-block mt-2 text-sm text-nrs-green dark:text-nrs-sand/80 hover:text-nrs-green-light dark:hover:text-nrs-sand underline underline-offset-4 decoration-nrs-green/30 dark:decoration-nrs-sand/30 hover:decoration-nrs-green/60 dark:hover:decoration-nrs-sand/60 transition-colors">voicearchive.com <span aria-hidden="true">&nearr;</span></a>
+                        <a href="https://voicearchive.com" rel="noopener" target="_blank" aria-label="voicearchive.com (opens in new tab)" class="arrow-slide inline-block mt-2 text-sm text-nrs-green dark:text-nrs-sand/80 hover:text-nrs-green-light dark:hover:text-nrs-sand underline underline-offset-4 decoration-nrs-green/30 dark:decoration-nrs-sand/30 hover:decoration-nrs-green/60 dark:hover:decoration-nrs-sand/60 transition-colors">voicearchive.com <span aria-hidden="true">&nearr;</span></a>
                     </article>
 
-                    <article>
+                    <article class="p-5 -mx-5 rounded-xl">
                         <div class="flex items-baseline gap-3 flex-wrap">
                             <h3 class="font-sans font-semibold text-lg">Mors</h3>
-                            <span class="text-sm text-nrs-brown/50 dark:text-nrs-sand/40">Coming soon</span>
+                            <span class="text-sm pulse-soft">Coming soon</span>
                         </div>
                         <p class="mt-1 text-nrs-brown/70 dark:text-nrs-sand/60 leading-relaxed">Something's brewing in Aarhus ☕ Stay tuned.</p>
                     </article>
                 </div>
             </section>
 
+            <!-- Divider -->
+            <div class="mt-16 sm:mt-24 text-center text-nrs-brown/15 dark:text-nrs-sand/10 select-none" aria-hidden="true">~ ~ ~</div>
+
             <!-- Contact -->
-            <section class="mt-16 sm:mt-24" aria-labelledby="contact-heading">
-                <h2 id="contact-heading" class="font-serif text-2xl sm:text-3xl text-nrs-green dark:text-nrs-sand mb-6">Contact</h2>
+            <section class="mt-10 sm:mt-14" aria-labelledby="contact-heading">
+                <h2 id="contact-heading" class="font-serif italic text-2xl sm:text-3xl text-nrs-green dark:text-nrs-sand mb-6">Say hi</h2>
                 <div class="space-y-2">
                     <a class="block underline underline-offset-4 decoration-nrs-green/30 dark:decoration-nrs-sand/30 hover:decoration-nrs-green/60 dark:hover:decoration-nrs-sand/60 transition-colors" href="mailto:its@notrocketscience.dk">its@notrocketscience.dk</a>
                     <a class="block text-nrs-brown/70 dark:text-nrs-sand/60 hover:text-nrs-brown dark:hover:text-nrs-sand transition-colors" href="tel:+4593967688">+45 93 96 76 88</a>
@@ -251,11 +281,11 @@
             <section class="mt-12" aria-labelledby="links-heading">
                 <h2 id="links-heading" class="sr-only">Links</h2>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="/@notrocketscience" class="inline-flex items-center gap-2 px-5 py-3 border border-nrs-green/20 dark:border-nrs-sand/20 rounded-lg text-nrs-green dark:text-nrs-sand hover:bg-nrs-green hover:text-nrs-sand dark:hover:bg-nrs-sand dark:hover:text-nrs-green transition-colors">
+                    <a href="/@notrocketscience" class="inline-flex items-center gap-2 px-5 py-3 border border-nrs-green/20 dark:border-nrs-sand/20 rounded-lg text-nrs-green dark:text-nrs-sand hover:bg-nrs-green hover:text-nrs-sand dark:hover:bg-nrs-sand dark:hover:text-nrs-green transition-all duration-200 hover:scale-[1.02]">
                         <span class="font-medium">@notrocketscience</span>
                         <span class="text-xs opacity-60">Social links</span>
                     </a>
-                    <a href="/@mathiasjakobsen" class="inline-flex items-center gap-2 px-5 py-3 border border-nrs-green/20 dark:border-nrs-sand/20 rounded-lg text-nrs-green dark:text-nrs-sand hover:bg-nrs-green hover:text-nrs-sand dark:hover:bg-nrs-sand dark:hover:text-nrs-green transition-colors">
+                    <a href="/@mathiasjakobsen" class="inline-flex items-center gap-2 px-5 py-3 border border-nrs-green/20 dark:border-nrs-sand/20 rounded-lg text-nrs-green dark:text-nrs-sand hover:bg-nrs-green hover:text-nrs-sand dark:hover:bg-nrs-sand dark:hover:text-nrs-green transition-all duration-200 hover:scale-[1.02]">
                         <span class="font-medium">@mathiasjakobsen</span>
                         <span class="text-xs opacity-60">Personal</span>
                     </a>
@@ -274,7 +304,7 @@
                 </p>
                 <p class="mt-1">Aarhus, Denmark</p>
             </div>
-            <p>&copy; 2021&ndash;2026</p>
+            <p title="yes, we're still here">&copy; 2021&ndash;2026</p>
         </div>
     </footer>
 
