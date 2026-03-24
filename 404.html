@@ -32,8 +32,9 @@
     <style type="text/tailwindcss">
         @theme {
             --color-nrs-green: #1f2d12;
-            --color-nrs-sand: #e2d6c0;
+            --color-nrs-sand: #ebe3d5;
             --color-nrs-brown: #2A1E06;
+            --color-nrs-cream: #f5f0e8;
             --font-sans: 'Instrument Sans', system-ui, sans-serif;
             --font-serif: 'Instrument Serif', Georgia, serif;
         }
@@ -51,7 +52,7 @@
             border-radius: 2px;
         }
         @media (prefers-color-scheme: dark) {
-            :focus-visible { outline-color: #e2d6c0; }
+            :focus-visible { outline-color: #ebe3d5; }
         }
         @keyframes float {
             0%, 100% { transform: translateY(0); }
@@ -71,12 +72,12 @@
         }
     </style>
 </head>
-<body class="bg-nrs-sand text-nrs-brown dark:bg-nrs-brown dark:text-nrs-sand font-sans antialiased min-h-screen flex items-center justify-center px-6">
+<body class="bg-nrs-cream text-nrs-brown dark:bg-nrs-brown dark:text-nrs-sand font-sans antialiased min-h-screen flex items-center justify-center px-6">
     <main class="text-center" role="main">
         <p class="text-6xl float mb-6" aria-hidden="true">🧭</p>
         <h1 class="font-serif italic text-5xl sm:text-6xl text-nrs-green dark:text-nrs-sand">404</h1>
         <p class="mt-4 text-lg text-nrs-brown/60 dark:text-nrs-sand/50">This page doesn't exist. It's not rocket science&thinsp;&mdash;&thinsp;it's just missing.</p>
-        <a href="/" class="inline-block mt-8 px-6 py-3 bg-nrs-green dark:bg-nrs-sand text-nrs-sand dark:text-nrs-green rounded-lg font-medium hover:scale-[1.03] transition-transform">
+        <a href="/" class="inline-block mt-8 px-6 py-3 bg-nrs-green dark:bg-nrs-sand text-nrs-cream dark:text-nrs-brown rounded-lg font-medium hover:scale-[1.03] transition-transform">
             Back to home
         </a>
     </main>

@@ -100,9 +100,9 @@
     <style type="text/tailwindcss">
         @theme {
             --color-nrs-green: #1f2d12;
-            --color-nrs-sand: #e2d6c0;
+            --color-nrs-sand: #ebe3d5;
             --color-nrs-brown: #2A1E06;
-            --color-nrs-green-light: #2d4119;
+            --color-nrs-cream: #f5f0e8;
             --font-sans: 'Instrument Sans', system-ui, sans-serif;
             --font-serif: 'Instrument Serif', Georgia, serif;
         }
@@ -120,7 +120,7 @@
             border-radius: 2px;
         }
         @media (prefers-color-scheme: dark) {
-            :focus-visible { outline-color: #e2d6c0; }
+            :focus-visible { outline-color: #ebe3d5; }
         }
         .skip-link {
             position: absolute;
@@ -204,90 +204,87 @@
 
     <script src="/js/main.js" defer></script>
 </head>
-<body class="bg-nrs-sand text-nrs-brown dark:bg-nrs-brown dark:text-nrs-sand font-sans antialiased min-h-screen flex flex-col selection:bg-nrs-green/20 dark:selection:bg-nrs-sand/20">
+<body class="bg-nrs-cream text-nrs-brown dark:bg-nrs-brown dark:text-nrs-sand font-sans antialiased min-h-screen flex flex-col selection:bg-nrs-green/20 dark:selection:bg-nrs-sand/20">
 
     <a href="#main" class="skip-link">Skip to content</a>
 
-    <header class="pt-16 sm:pt-24 px-6">
-        <div class="max-w-2xl mx-auto">
-            <p class="font-serif text-3xl sm:text-4xl italic text-nrs-brown/50 dark:text-nrs-sand/50 -mb-2 sm:-mb-3">It's</p>
-            <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-nrs-green dark:text-nrs-sand leading-tight">
+    <header class="pt-20 sm:pt-32 pb-16 sm:pb-24 px-6">
+        <div class="max-w-3xl mx-auto">
+            <p class="font-serif text-4xl sm:text-5xl md:text-6xl italic text-nrs-brown/50 dark:text-nrs-sand/50 -mb-1 sm:-mb-2">It's</p>
+            <h1 class="font-serif text-6xl sm:text-7xl md:text-[5.5rem] font-bold text-nrs-green dark:text-nrs-sand leading-[0.95] tracking-tight">
                 Not Rocket Science<span class="inline-block text-lg sm:text-xl align-top mt-1 sm:mt-2 ml-0.5 rotate-6 text-nrs-green/60 dark:text-nrs-sand/50">&trade;</span>
             </h1>
-            <p class="mt-6 text-lg sm:text-xl italic text-nrs-brown/70 dark:text-nrs-sand/60 max-w-lg leading-relaxed">
+            <p class="mt-8 text-lg sm:text-xl text-nrs-brown/60 dark:text-nrs-sand/50 max-w-md leading-relaxed">
                 Just some great companies, people, ideas and projects I dedicate my time to.
             </p>
         </div>
     </header>
 
-    <main id="main" class="flex-1 px-6 mt-16 sm:mt-24">
-        <div class="max-w-2xl mx-auto">
+    <main id="main" class="flex-1 px-6">
+        <div class="max-w-3xl mx-auto">
 
             <!-- Projects -->
-            <section aria-labelledby="projects-heading" class="animate-in-d3">
-                <h2 id="projects-heading" class="font-serif italic text-2xl sm:text-3xl text-nrs-green dark:text-nrs-sand mb-8">What I work on</h2>
+            <section aria-labelledby="projects-heading">
+                <h2 id="projects-heading" class="font-serif italic text-2xl sm:text-3xl text-nrs-green dark:text-nrs-sand mb-10">What I work on</h2>
 
-                <div class="space-y-4">
-                    <article class="group p-5 -mx-5 rounded-xl transition-all duration-200 hover:bg-nrs-green/[0.03] dark:hover:bg-nrs-sand/[0.04] hover:pl-7 border-l-2 border-transparent hover:border-nrs-green/40 dark:hover:border-nrs-sand/30">
-                        <div class="flex items-baseline gap-3 flex-wrap">
+                <div class="grid gap-4">
+                    <article class="group p-6 rounded-2xl bg-nrs-sand/50 dark:bg-nrs-sand/[0.04] border border-transparent hover:border-nrs-green/20 dark:hover:border-nrs-sand/15 transition-all duration-200">
+                        <div class="flex items-baseline justify-between gap-3 flex-wrap">
                             <h3 class="font-sans font-semibold text-lg">JKBSN ApS</h3>
                             <span class="text-sm text-nrs-brown/50 dark:text-nrs-sand/40">Freelance</span>
                         </div>
-                        <p class="mt-1 text-nrs-brown/70 dark:text-nrs-sand/60 leading-relaxed">My freelance practice. I design and build software &mdash; from early-stage products to scaling platforms. Hands-on architecture and code.</p>
-                        <a href="https://mathiasjakobsen.dk" rel="noopener" target="_blank" aria-label="mathiasjakobsen.dk (opens in new tab)" class="arrow-slide inline-block mt-2 text-sm text-nrs-green dark:text-nrs-sand/80 hover:text-nrs-green-light dark:hover:text-nrs-sand underline underline-offset-4 decoration-nrs-green/30 dark:decoration-nrs-sand/30 hover:decoration-nrs-green/60 dark:hover:decoration-nrs-sand/60 transition-colors">mathiasjakobsen.dk <span aria-hidden="true">&nearr;</span></a>
+                        <p class="mt-2 text-nrs-brown/65 dark:text-nrs-sand/55 leading-relaxed">My freelance practice. I design and build software &mdash; from early-stage products to scaling platforms. Hands-on architecture and code.</p>
+                        <a href="https://mathiasjakobsen.dk" rel="noopener" target="_blank" aria-label="mathiasjakobsen.dk (opens in new tab)" class="arrow-slide inline-block mt-3 text-sm font-medium text-nrs-green dark:text-nrs-sand/80 hover:text-nrs-green/70 dark:hover:text-nrs-sand transition-colors">mathiasjakobsen.dk <span aria-hidden="true">&nearr;</span></a>
                     </article>
 
-                    <article class="group p-5 -mx-5 rounded-xl transition-all duration-200 hover:bg-nrs-green/[0.03] dark:hover:bg-nrs-sand/[0.04] hover:pl-7 border-l-2 border-transparent hover:border-nrs-green/40 dark:hover:border-nrs-sand/30">
-                        <div class="flex items-baseline gap-3 flex-wrap">
+                    <article class="group p-6 rounded-2xl bg-nrs-sand/50 dark:bg-nrs-sand/[0.04] border border-transparent hover:border-nrs-green/20 dark:hover:border-nrs-sand/15 transition-all duration-200">
+                        <div class="flex items-baseline justify-between gap-3 flex-wrap">
                             <h3 class="font-sans font-semibold text-lg">Efektive</h3>
                             <span class="text-sm text-nrs-brown/50 dark:text-nrs-sand/40">Investor &amp; fractional CTO</span>
                         </div>
-                        <p class="mt-1 text-nrs-brown/70 dark:text-nrs-sand/60 leading-relaxed">A Danish freelance marketplace that connects businesses with local talent. 120+ categories, milestone payments, the whole deal. I invest and help build the tech.</p>
-                        <a href="https://efektive.dk" rel="noopener" target="_blank" aria-label="efektive.dk (opens in new tab)" class="arrow-slide inline-block mt-2 text-sm text-nrs-green dark:text-nrs-sand/80 hover:text-nrs-green-light dark:hover:text-nrs-sand underline underline-offset-4 decoration-nrs-green/30 dark:decoration-nrs-sand/30 hover:decoration-nrs-green/60 dark:hover:decoration-nrs-sand/60 transition-colors">efektive.dk <span aria-hidden="true">&nearr;</span></a>
+                        <p class="mt-2 text-nrs-brown/65 dark:text-nrs-sand/55 leading-relaxed">A Danish freelance marketplace that connects businesses with local talent. 120+ categories, milestone payments, the whole deal. I invest and help build the tech.</p>
+                        <a href="https://efektive.dk" rel="noopener" target="_blank" aria-label="efektive.dk (opens in new tab)" class="arrow-slide inline-block mt-3 text-sm font-medium text-nrs-green dark:text-nrs-sand/80 hover:text-nrs-green/70 dark:hover:text-nrs-sand transition-colors">efektive.dk <span aria-hidden="true">&nearr;</span></a>
                     </article>
 
-                    <article class="group p-5 -mx-5 rounded-xl transition-all duration-200 hover:bg-nrs-green/[0.03] dark:hover:bg-nrs-sand/[0.04] hover:pl-7 border-l-2 border-transparent hover:border-nrs-green/40 dark:hover:border-nrs-sand/30">
-                        <div class="flex items-baseline gap-3 flex-wrap">
+                    <article class="group p-6 rounded-2xl bg-nrs-sand/50 dark:bg-nrs-sand/[0.04] border border-transparent hover:border-nrs-green/20 dark:hover:border-nrs-sand/15 transition-all duration-200">
+                        <div class="flex items-baseline justify-between gap-3 flex-wrap">
                             <h3 class="font-sans font-semibold text-lg">VoiceArchive</h3>
                             <span class="text-sm text-nrs-brown/50 dark:text-nrs-sand/40">Board member</span>
                         </div>
-                        <p class="mt-1 text-nrs-brown/70 dark:text-nrs-sand/60 leading-relaxed">Full-service voiceover agency. They cast, record, and produce audio for brands like LEGO, Vimeo, and Momondo &mdash; in pretty much any language. I sit on the board.</p>
-                        <a href="https://voicearchive.com" rel="noopener" target="_blank" aria-label="voicearchive.com (opens in new tab)" class="arrow-slide inline-block mt-2 text-sm text-nrs-green dark:text-nrs-sand/80 hover:text-nrs-green-light dark:hover:text-nrs-sand underline underline-offset-4 decoration-nrs-green/30 dark:decoration-nrs-sand/30 hover:decoration-nrs-green/60 dark:hover:decoration-nrs-sand/60 transition-colors">voicearchive.com <span aria-hidden="true">&nearr;</span></a>
+                        <p class="mt-2 text-nrs-brown/65 dark:text-nrs-sand/55 leading-relaxed">Full-service voiceover agency. They cast, record, and produce audio for brands like LEGO, Vimeo, and Momondo &mdash; in pretty much any language. I sit on the board.</p>
+                        <a href="https://voicearchive.com" rel="noopener" target="_blank" aria-label="voicearchive.com (opens in new tab)" class="arrow-slide inline-block mt-3 text-sm font-medium text-nrs-green dark:text-nrs-sand/80 hover:text-nrs-green/70 dark:hover:text-nrs-sand transition-colors">voicearchive.com <span aria-hidden="true">&nearr;</span></a>
                     </article>
 
-                    <article class="p-5 -mx-5 rounded-xl">
-                        <div class="flex items-baseline gap-3 flex-wrap">
+                    <article class="p-6 rounded-2xl border border-dashed border-nrs-brown/10 dark:border-nrs-sand/10">
+                        <div class="flex items-baseline justify-between gap-3 flex-wrap">
                             <h3 class="font-sans font-semibold text-lg">Mors</h3>
-                            <span class="text-sm pulse-soft">Coming soon</span>
+                            <span class="text-xs font-medium uppercase tracking-wider pulse-soft">Coming soon</span>
                         </div>
-                        <p class="mt-1 text-nrs-brown/70 dark:text-nrs-sand/60 leading-relaxed">Something's brewing in Aarhus ☕ Stay tuned.</p>
+                        <p class="mt-2 text-nrs-brown/50 dark:text-nrs-sand/40 leading-relaxed">Something's brewing in Aarhus ☕ Stay tuned.</p>
                     </article>
                 </div>
             </section>
 
-            <!-- Divider -->
-            <div class="mt-16 sm:mt-24 text-center text-nrs-brown/15 dark:text-nrs-sand/10 select-none" aria-hidden="true">~ ~ ~</div>
-
             <!-- Contact -->
-            <section class="mt-10 sm:mt-14" aria-labelledby="contact-heading">
+            <section class="mt-20 sm:mt-28" aria-labelledby="contact-heading">
                 <h2 id="contact-heading" class="font-serif italic text-2xl sm:text-3xl text-nrs-green dark:text-nrs-sand mb-6">Say hi</h2>
-                <div class="space-y-2">
-                    <a class="block underline underline-offset-4 decoration-nrs-green/30 dark:decoration-nrs-sand/30 hover:decoration-nrs-green/60 dark:hover:decoration-nrs-sand/60 transition-colors" href="mailto:its@notrocketscience.dk">its@notrocketscience.dk</a>
-                    <a class="block text-nrs-brown/70 dark:text-nrs-sand/60 hover:text-nrs-brown dark:hover:text-nrs-sand transition-colors" href="tel:+4593967688">+45 93 96 76 88</a>
+                <div class="flex flex-col sm:flex-row gap-4 sm:gap-8">
+                    <a class="text-lg hover:text-nrs-green/70 dark:hover:text-nrs-sand transition-colors" href="mailto:its@notrocketscience.dk">its@notrocketscience.dk</a>
+                    <a class="text-lg text-nrs-brown/50 dark:text-nrs-sand/40 hover:text-nrs-brown dark:hover:text-nrs-sand transition-colors" href="tel:+4593967688">+45 93 96 76 88</a>
                 </div>
             </section>
 
             <!-- Links -->
-            <section class="mt-12" aria-labelledby="links-heading">
+            <section class="mt-10" aria-labelledby="links-heading">
                 <h2 id="links-heading" class="sr-only">Links</h2>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="/@notrocketscience" class="inline-flex items-center gap-2 px-5 py-3 border border-nrs-green/20 dark:border-nrs-sand/20 rounded-lg text-nrs-green dark:text-nrs-sand hover:bg-nrs-green hover:text-nrs-sand dark:hover:bg-nrs-sand dark:hover:text-nrs-green transition-all duration-200 hover:scale-[1.02]">
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <a href="/@notrocketscience" class="group inline-flex items-center gap-3 px-5 py-3.5 rounded-xl border border-nrs-green/20 dark:border-nrs-sand/20 text-nrs-green dark:text-nrs-sand hover:bg-nrs-green hover:text-nrs-cream dark:hover:bg-nrs-sand dark:hover:text-nrs-brown hover:scale-[1.02] transition-all duration-200">
                         <span class="font-medium">@notrocketscience</span>
-                        <span class="text-xs opacity-60">Social links</span>
+                        <span class="text-xs opacity-50 group-hover:opacity-70">links</span>
                     </a>
-                    <a href="/@mathiasjakobsen" class="inline-flex items-center gap-2 px-5 py-3 border border-nrs-green/20 dark:border-nrs-sand/20 rounded-lg text-nrs-green dark:text-nrs-sand hover:bg-nrs-green hover:text-nrs-sand dark:hover:bg-nrs-sand dark:hover:text-nrs-green transition-all duration-200 hover:scale-[1.02]">
+                    <a href="/@mathiasjakobsen" class="group inline-flex items-center gap-3 px-5 py-3.5 rounded-xl border border-nrs-green/20 dark:border-nrs-sand/20 text-nrs-green dark:text-nrs-sand hover:bg-nrs-green hover:text-nrs-cream dark:hover:bg-nrs-sand dark:hover:text-nrs-brown hover:scale-[1.02] transition-all duration-200">
                         <span class="font-medium">@mathiasjakobsen</span>
-                        <span class="text-xs opacity-60">Personal</span>
+                        <span class="text-xs opacity-50 group-hover:opacity-70">personal</span>
                     </a>
                 </div>
             </section>
@@ -295,12 +292,12 @@
         </div>
     </main>
 
-    <footer class="mt-16 sm:mt-24 py-8 px-6 border-t border-nrs-brown/10 dark:border-nrs-sand/10">
-        <div class="max-w-2xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-sm text-nrs-brown/50 dark:text-nrs-sand/40">
+    <footer class="mt-20 sm:mt-28 py-8 px-6 border-t border-nrs-brown/8 dark:border-nrs-sand/8">
+        <div class="max-w-3xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-sm text-nrs-brown/40 dark:text-nrs-sand/30">
             <div>
                 <p>
                     Not Rocket Science ApS &middot;
-                    <a href="https://datacvr.virk.dk/enhed/virksomhed/42453951" target="_blank" rel="noopener" aria-label="DK42453951 — open in Danish Central Business Register (opens in new tab)" class="hover:text-nrs-green dark:hover:text-nrs-sand transition-colors underline underline-offset-2 decoration-nrs-brown/20 dark:decoration-nrs-sand/20">DK42453951</a>
+                    <a href="https://datacvr.virk.dk/enhed/virksomhed/42453951" target="_blank" rel="noopener" aria-label="DK42453951 — open in Danish Central Business Register (opens in new tab)" class="hover:text-nrs-green dark:hover:text-nrs-sand transition-colors underline underline-offset-2 decoration-nrs-brown/15 dark:decoration-nrs-sand/15">DK42453951</a>
                 </p>
                 <p class="mt-1">Aarhus, Denmark</p>
             </div>

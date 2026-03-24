@@ -127,7 +127,7 @@
         dialog = document.createElement('div');
         dialog.setAttribute('role', 'dialog');
         dialog.setAttribute('aria-label', 'Command palette');
-        dialog.style.cssText = 'width:90%;max-width:480px;background:#e2d6c0;color:#2A1E06;border-radius:12px;box-shadow:0 24px 48px rgba(0,0,0,0.3);overflow:hidden;font-family:"Instrument Sans",system-ui,sans-serif;';
+        dialog.style.cssText = 'width:90%;max-width:480px;background:#f5f0e8;color:#2A1E06;border-radius:12px;box-shadow:0 24px 48px rgba(0,0,0,0.2);overflow:hidden;font-family:"Instrument Sans",system-ui,sans-serif;';
 
         input = document.createElement('input');
         input.type = 'text';
@@ -152,10 +152,10 @@
 
         // Dark mode
         if (window.matchMedia('(prefers-color-scheme:dark)').matches) {
-            dialog.style.background = '#1f2d12';
-            dialog.style.color = '#e2d6c0';
-            input.style.color = '#e2d6c0';
-            hr.style.background = 'rgba(226,214,192,0.1)';
+            dialog.style.background = '#2A1E06';
+            dialog.style.color = '#ebe3d5';
+            input.style.color = '#ebe3d5';
+            hr.style.background = 'rgba(235,227,213,0.1)';
         }
 
         render();
@@ -172,7 +172,7 @@
             if (item.download) li.textContent += ' ↓';
             li.style.cssText = 'padding:10px 20px;cursor:pointer;font-size:14px;border-radius:6px;margin:2px 8px;transition:background 0.1s;';
             if (i === active) {
-                li.style.background = window.matchMedia('(prefers-color-scheme:dark)').matches ? 'rgba(226,214,192,0.1)' : 'rgba(31,45,18,0.08)';
+                li.style.background = window.matchMedia('(prefers-color-scheme:dark)').matches ? 'rgba(235,227,213,0.08)' : 'rgba(31,45,18,0.06)';
                 requestAnimationFrame(function () {
                     var lt = list.scrollTop;
                     var lb = lt + list.clientHeight;
