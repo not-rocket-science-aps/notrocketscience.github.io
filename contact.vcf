@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+N:;Not Rocket Science ApS;;;
+FN:Not Rocket Science ApS
+ORG:Not Rocket Science ApS
+TITLE:Software Consultancy & Product Studio
+TEL;TYPE=WORK,VOICE:+45 93 96 76 88
+EMAIL;TYPE=INTERNET,WORK:its@notrocketscience.dk
+URL:https://notrocketscience.dk
+ADR;TYPE=WORK:;;Havnegade 2B, 1. sal;Aarhus;;8000;Denmark
+NOTE:CVR DK42453951 — Danish software consultancy & product studio.
+REV:2026-03-24T00:00:00Z
+END:VCARD

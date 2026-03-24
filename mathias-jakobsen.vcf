@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Jakobsen;Mathias;Lynnerup;;
+FN:Mathias Lynnerup Jakobsen
+ORG:Not Rocket Science ApS
+TITLE:Software Architect & Entrepreneur
+TEL;TYPE=WORK,VOICE:+45 93 96 76 88
+EMAIL;TYPE=INTERNET,WORK:mathias@notrocketscience.dk
+URL:https://mathiasjakobsen.dk
+ADR;TYPE=WORK:;;;;;;Denmark
+NOTE:Founder of Not Rocket Science ApS. Software architect, entrepreneur & builder based in Aarhus, Denmark.
+REV:2026-03-24T00:00:00Z
+END:VCARD

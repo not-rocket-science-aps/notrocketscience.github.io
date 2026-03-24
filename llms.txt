@@ -1,0 +1,31 @@
+# Not Rocket Science
+
+> Danish software consultancy & product studio
+
+Not Rocket Science ApS is a software consultancy and product studio based in Aarhus, Denmark, founded by Mathias Lynnerup Jakobsen. The company builds, advises, and invests in technology companies.
+
+## Company Info
+
+- **Legal name**: Not Rocket Science ApS
+- **CVR**: DK42453951
+- **Location**: Aarhus, Denmark
+- **Email**: its@notrocketscience.dk
+- **Website**: https://notrocketscience.dk
+
+## Founder
+
+Mathias Lynnerup Jakobsen — Software architect and builder.
+
+## Projects & Ventures
+
+- **JKBSN ApS** (https://mathiasjakobsen.dk) — Freelance software architect, engineer & developer
+- **Efektive** (https://efektive.dk) — Investor & Fractional CTO
+- **VoiceArchive** (https://voicearchive.com) — Board member
+- **Mors™** — Coming soon
+
+## Pages
+
+- / — Main landing page
+- /@notrocketscience — Company social media links
+- /@mathiasjakobsen — Personal links and facts about the founder
+- /contact.vcf — Downloadable vCard with business contact information

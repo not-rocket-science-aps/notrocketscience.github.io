@@ -1,80 +1,252 @@
-<!doctype html>
-<html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Not Rocket Science™</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-        <style>
-            html, body {
-                font-family: "Instrument Sans", sans-serif;
-                font-optical-sizing: auto;
-                font-weight: 500;
-                font-style: normal;
-                font-variation-settings:
-                  "wdth" 100;
-            }
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-            h1, h2, h3 {
-                font-family: "Instrument Serif", serif;
-            }
+    <title>Not Rocket Science™ — Software Consultancy & Product Studio</title>
 
-            ::selection {
-                color:white;
-                background: #b1dd40;
-            }
-        </style>
+    <!-- SEO -->
+    <meta name="description" content="Not Rocket Science™ is a Danish software consultancy and product studio founded by Mathias Lynnerup Jakobsen. We build, advise, and invest in technology companies.">
+    <meta name="keywords" content="software consultancy, product studio, software architecture, fractional CTO, Denmark, Aarhus, Mathias Lynnerup Jakobsen">
+    <meta name="author" content="Mathias Lynnerup Jakobsen">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://notrocketscience.dk/">
 
-        <style type="text/tailwindcss">
-            @theme {
-            --color-grun: #031403;
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Not Rocket Science™">
+    <meta property="og:title" content="Not Rocket Science™ — Software Consultancy & Product Studio">
+    <meta property="og:description" content="Danish software consultancy and product studio. We build, advise, and invest in technology companies.">
+    <meta property="og:url" content="https://notrocketscience.dk/">
+    <meta property="og:locale" content="en_DK">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Not Rocket Science™ — Software Consultancy & Product Studio">
+    <meta name="twitter:description" content="Danish software consultancy and product studio. We build, advise, and invest in technology companies.">
+
+    <!-- Theme & Mobile -->
+    <meta name="theme-color" content="#1f2d12" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1f2d12" media="(prefers-color-scheme: dark)">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="NRS">
+    <meta name="application-name" content="Not Rocket Science™">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="color-scheme" content="light dark">
+
+    <!-- Geo -->
+    <meta name="geo.region" content="DK-82">
+    <meta name="geo.placename" content="Aarhus">
+
+    <!-- Self-hosted fonts -->
+    <style>
+        @font-face {
+            font-family: 'Instrument Sans';
+            src: url('/fonts/InstrumentSans-Variable.woff2') format('woff2');
+            font-weight: 400 700;
+            font-style: normal;
+            font-display: swap;
         }
-        </style>
+        @font-face {
+            font-family: 'Instrument Sans';
+            src: url('/fonts/InstrumentSans-Variable-Italic.woff2') format('woff2');
+            font-weight: 400 700;
+            font-style: italic;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Instrument Serif';
+            src: url('/fonts/InstrumentSerif-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+    </style>
 
-        <link rel="icon" href="favicon.ico">
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-    </head>
-    <body class="absolute w-full h-full flex flex-col bg-[#fbfefb] text-[#0b470b] dark:bg-[#031403] dark:text-[#e9ff92]">
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+    <!-- Tailwind CSS v4 (self-hosted) -->
+    <script src="/vendor/tailwind.js"></script>
+    <style type="text/tailwindcss">
+        @theme {
+            --color-nrs-green: #1f2d12;
+            --color-nrs-sand: #e2d6c0;
+            --color-nrs-brown: #2A1E06;
+            --color-nrs-green-light: #2d4119;
+            --font-sans: 'Instrument Sans', system-ui, sans-serif;
+            --font-serif: 'Instrument Serif', Georgia, serif;
+        }
+    </style>
+    <style>
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
+        }
+        :focus-visible {
+            outline: 2px solid #1f2d12;
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+        @media (prefers-color-scheme: dark) {
+            :focus-visible {
+                outline-color: #e2d6c0;
+            }
+        }
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 0;
+            z-index: 999;
+            padding: 0.5rem 1rem;
+            background: #1f2d12;
+            color: #e2d6c0;
+            font-size: 0.875rem;
+        }
+        .skip-link:focus {
+            left: 0;
+        }
+    </style>
 
-        <div class="flex-grow flex flex-col items-center justify-center">
-            <div class="flex flex-col md:flex-row md:space-x-12">
-                <div class="">
-                    <h2 class="text-3xl italic">It's</h2>
-                    <h1 class="text-7xl font-bold">Not Rocket Science™</h1>
-                    <h2 class="mt-4 text-2xl italic">Just some great companies, people, ideas and projects I dedicate my time to.</h2>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Not Rocket Science ApS",
+        "alternateName": "NRS",
+        "url": "https://notrocketscience.dk",
+        "email": "its@notrocketscience.dk",
+        "telephone": "+4593967688",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Aarhus",
+            "addressCountry": "DK"
+        },
+        "founder": {
+            "@type": "Person",
+            "name": "Mathias Lynnerup Jakobsen",
+            "url": "https://mathiasjakobsen.dk",
+            "sameAs": [
+                "https://notrocketscience.dk/@mathiasjakobsen"
+            ]
+        },
+        "description": "Danish software consultancy and product studio. We build, advise, and invest in technology companies.",
+        "foundingDate": "2020",
+        "legalName": "Not Rocket Science ApS",
+        "taxID": "DK42453951",
+        "sameAs": [
+            "https://notrocketscience.dk/@notrocketscience"
+        ]
+    }
+    </script>
 
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    <link rel="humans" type="text/plain" href="/humans.txt">
 
-                    <a class="mt-8 block underline hover:no-underline" href="mailto:its@notrocketscience.dk" title="Hello!">its@notrocketscience.dk</a>
-                    <a class="mt-2 block hover:underline hover:text-blue-400" href="tel:+4593967688" title="Hello?">+45 93 96 76 88</a>
-                </div>
+    <script src="/js/main.js" defer></script>
+</head>
+<body class="bg-nrs-sand text-nrs-brown dark:bg-nrs-green dark:text-nrs-sand font-sans antialiased min-h-screen flex flex-col selection:bg-nrs-green/20 dark:selection:bg-nrs-sand/20">
 
-                <div class="space-y-2 mt-6">
-                </div>
-            </div>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <header class="pt-16 sm:pt-24 px-6">
+        <div class="max-w-2xl mx-auto">
+            <p class="font-serif text-xl sm:text-2xl italic text-nrs-brown/70 dark:text-nrs-sand/70">It's</p>
+            <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-nrs-green dark:text-nrs-sand leading-tight">
+                Not Rocket Science&trade;
+            </h1>
+            <p class="mt-4 text-lg sm:text-xl italic text-nrs-brown/70 dark:text-nrs-sand/60 max-w-lg leading-relaxed">
+                Just some great companies, people, ideas and projects I dedicate my time to.
+            </p>
         </div>
+    </header>
 
-        <p class="w-full flex justify-center items-center text-sm py-10 space-x-6">
-            <span>© Not Rocket Science™ 2021 - 2025</span>
-            <span>📍 Aarhus, Denmark</span>
-            <a
-                class="hover:text-blue-400"
-                href="https://datacvr.virk.dk/enhed/virksomhed/42453951"
-                target="_blank"
-                title="Open company records in the danish Central Business Register (CVR)"
-            >
-                Not Rocket Science ApS (DK42453951) ↗
-            </a>
-        </p>
+    <main id="main" class="flex-1 px-6 mt-16 sm:mt-24">
+        <div class="max-w-2xl mx-auto">
 
-        <script src="js/main.js"></script>
-    </body>
+            <!-- Projects -->
+            <section aria-labelledby="projects-heading">
+                <h2 id="projects-heading" class="font-serif text-2xl sm:text-3xl text-nrs-green dark:text-nrs-sand mb-8">What I work on</h2>
+
+                <div class="space-y-8">
+                    <article>
+                        <div class="flex items-baseline gap-3 flex-wrap">
+                            <h3 class="font-sans font-semibold text-lg">JKBSN ApS</h3>
+                            <span class="text-sm text-nrs-brown/50 dark:text-nrs-sand/40">Freelance</span>
+                        </div>
+                        <p class="mt-1 text-nrs-brown/70 dark:text-nrs-sand/60 leading-relaxed">My freelance practice. I design and build software &mdash; from early-stage products to scaling platforms. Hands-on architecture and code.</p>
+                        <a href="https://mathiasjakobsen.dk" rel="noopener" target="_blank" aria-label="mathiasjakobsen.dk (opens in new tab)" class="inline-block mt-2 text-sm text-nrs-green dark:text-nrs-sand/80 hover:text-nrs-green-light dark:hover:text-nrs-sand underline underline-offset-4 decoration-nrs-green/30 dark:decoration-nrs-sand/30 hover:decoration-nrs-green/60 dark:hover:decoration-nrs-sand/60 transition-colors">mathiasjakobsen.dk <span aria-hidden="true">&nearr;</span></a>
+                    </article>
+
+                    <article>
+                        <div class="flex items-baseline gap-3 flex-wrap">
+                            <h3 class="font-sans font-semibold text-lg">Efektive</h3>
+                            <span class="text-sm text-nrs-brown/50 dark:text-nrs-sand/40">Investor &amp; fractional CTO</span>
+                        </div>
+                        <p class="mt-1 text-nrs-brown/70 dark:text-nrs-sand/60 leading-relaxed">A Danish freelance marketplace that connects businesses with local talent. 120+ categories, milestone payments, the whole deal. I invest and help build the tech.</p>
+                        <a href="https://efektive.dk" rel="noopener" target="_blank" aria-label="efektive.dk (opens in new tab)" class="inline-block mt-2 text-sm text-nrs-green dark:text-nrs-sand/80 hover:text-nrs-green-light dark:hover:text-nrs-sand underline underline-offset-4 decoration-nrs-green/30 dark:decoration-nrs-sand/30 hover:decoration-nrs-green/60 dark:hover:decoration-nrs-sand/60 transition-colors">efektive.dk <span aria-hidden="true">&nearr;</span></a>
+                    </article>
+
+                    <article>
+                        <div class="flex items-baseline gap-3 flex-wrap">
+                            <h3 class="font-sans font-semibold text-lg">VoiceArchive</h3>
+                            <span class="text-sm text-nrs-brown/50 dark:text-nrs-sand/40">Board member</span>
+                        </div>
+                        <p class="mt-1 text-nrs-brown/70 dark:text-nrs-sand/60 leading-relaxed">Full-service voiceover agency. They cast, record, and produce audio for brands like LEGO, Vimeo, and Momondo &mdash; in pretty much any language. I sit on the board.</p>
+                        <a href="https://voicearchive.com" rel="noopener" target="_blank" aria-label="voicearchive.com (opens in new tab)" class="inline-block mt-2 text-sm text-nrs-green dark:text-nrs-sand/80 hover:text-nrs-green-light dark:hover:text-nrs-sand underline underline-offset-4 decoration-nrs-green/30 dark:decoration-nrs-sand/30 hover:decoration-nrs-green/60 dark:hover:decoration-nrs-sand/60 transition-colors">voicearchive.com <span aria-hidden="true">&nearr;</span></a>
+                    </article>
+
+                    <article>
+                        <div class="flex items-baseline gap-3 flex-wrap">
+                            <h3 class="font-sans font-semibold text-lg">Mors&trade;</h3>
+                            <span class="text-sm text-nrs-brown/50 dark:text-nrs-sand/40">Coming soon</span>
+                        </div>
+                        <p class="mt-1 text-nrs-brown/70 dark:text-nrs-sand/60 leading-relaxed">Something's cooking. Stay tuned.</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Contact -->
+            <section class="mt-16 sm:mt-24" aria-labelledby="contact-heading">
+                <h2 id="contact-heading" class="font-serif text-2xl sm:text-3xl text-nrs-green dark:text-nrs-sand mb-6">Contact</h2>
+                <div class="space-y-2">
+                    <a class="block underline underline-offset-4 decoration-nrs-green/30 dark:decoration-nrs-sand/30 hover:decoration-nrs-green/60 dark:hover:decoration-nrs-sand/60 transition-colors" href="mailto:its@notrocketscience.dk">its@notrocketscience.dk</a>
+                    <a class="block text-nrs-brown/70 dark:text-nrs-sand/60 hover:text-nrs-brown dark:hover:text-nrs-sand transition-colors" href="tel:+4593967688">+45 93 96 76 88</a>
+                </div>
+            </section>
+
+            <!-- Links -->
+            <section class="mt-12" aria-labelledby="links-heading">
+                <h2 id="links-heading" class="sr-only">Links</h2>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="/@notrocketscience" class="inline-flex items-center gap-2 px-5 py-3 border border-nrs-green/20 dark:border-nrs-sand/20 rounded-lg text-nrs-green dark:text-nrs-sand hover:bg-nrs-green hover:text-nrs-sand dark:hover:bg-nrs-sand dark:hover:text-nrs-green transition-colors">
+                        <span class="font-medium">@notrocketscience</span>
+                        <span class="text-xs opacity-60">Social links</span>
+                    </a>
+                    <a href="/@mathiasjakobsen" class="inline-flex items-center gap-2 px-5 py-3 border border-nrs-green/20 dark:border-nrs-sand/20 rounded-lg text-nrs-green dark:text-nrs-sand hover:bg-nrs-green hover:text-nrs-sand dark:hover:bg-nrs-sand dark:hover:text-nrs-green transition-colors">
+                        <span class="font-medium">@mathiasjakobsen</span>
+                        <span class="text-xs opacity-60">Personal</span>
+                    </a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="mt-16 sm:mt-24 py-8 px-6 border-t border-nrs-brown/10 dark:border-nrs-sand/10">
+        <div class="max-w-2xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-sm text-nrs-brown/50 dark:text-nrs-sand/40">
+            <div>
+                <p>
+                    Not Rocket Science ApS &middot;
+                    <a href="https://datacvr.virk.dk/enhed/virksomhed/42453951" target="_blank" rel="noopener" aria-label="DK42453951 — open in Danish Central Business Register (opens in new tab)" class="hover:text-nrs-green dark:hover:text-nrs-sand transition-colors underline underline-offset-2 decoration-nrs-brown/20 dark:decoration-nrs-sand/20">DK42453951</a>
+                </p>
+                <p class="mt-1">Aarhus, Denmark</p>
+            </div>
+            <p>&copy; 2021&ndash;2026</p>
+        </div>
+    </footer>
+
+</body>
 </html>
