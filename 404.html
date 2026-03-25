@@ -32,7 +32,7 @@
     <style type="text/tailwindcss">
         @theme {
             --color-nrs-green: #1f2d12;
-            --color-nrs-sand: #ebe3d5;
+            --color-nrs-sand: #e2d6c0;
             --color-nrs-brown: #2A1E06;
             --color-nrs-cream: #f5f0e8;
             --font-sans: 'Instrument Sans', system-ui, sans-serif;
@@ -72,8 +72,8 @@
         }
     </style>
 </head>
-<body class="bg-nrs-cream text-nrs-brown dark:bg-nrs-brown dark:text-nrs-sand font-sans antialiased min-h-screen flex items-center justify-center px-6">
-    <main class="text-center" role="main">
+<body class="bg-nrs-sand text-nrs-brown dark:bg-nrs-green dark:text-nrs-sand font-sans antialiased min-h-screen flex flex-col items-center justify-center px-6">
+    <main class="text-center flex-1 flex flex-col items-center justify-center" role="main">
         <p class="text-6xl float mb-6" aria-hidden="true">🧭</p>
         <h1 class="font-serif italic text-5xl sm:text-6xl text-nrs-green dark:text-nrs-sand">404</h1>
         <p class="mt-4 text-lg text-nrs-brown/60 dark:text-nrs-sand/50">This page doesn't exist. It's not rocket science&thinsp;&mdash;&thinsp;it's just missing.</p>
@@ -81,5 +81,18 @@
             Back to home
         </a>
     </main>
+
+    <footer class="py-8 px-6 border-t border-nrs-brown/8 dark:border-nrs-sand/8 w-full max-w-3xl">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-sm text-nrs-brown/40 dark:text-nrs-sand/30">
+            <div>
+                <p>
+                    Not Rocket Science ApS &nbsp;&middot;&nbsp;
+                    <a href="https://datacvr.virk.dk/enhed/virksomhed/42453951" target="_blank" rel="noopener" aria-label="DK42453951 — open in Danish Central Business Register (opens in new tab)" class="hover:text-nrs-green dark:hover:text-nrs-sand transition-colors underline underline-offset-2 decoration-nrs-brown/15 dark:decoration-nrs-sand/15">DK42453951</a>
+                </p>
+                <p class="mt-1">Aarhus, Denmark</p>
+            </div>
+            <p title="yes, we're still here">&copy; 2021 &ndash; 2026</p>
+        </div>
+    </footer>
 </body>
 </html>

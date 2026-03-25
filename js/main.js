@@ -49,12 +49,14 @@
     }
 })();
 
-/* Shift + Mouse cursor trail */
+/* Fast-mouse cursor trail — rockets appear when moving quickly */
 (function () {
     var rockets = [];
     var pool = [];
     var raf = null;
     var LIFETIME = 800;
+    var SPEED_THRESHOLD = 2200;
+    var lastX = 0, lastY = 0, lastT = 0;
 
     function getEl() {
         if (pool.length) return pool.pop();
@@ -67,14 +69,26 @@
     }
 
     document.addEventListener('mousemove', function (e) {
-        if (!e.shiftKey) return;
-        var el = getEl();
-        el.style.left = e.clientX + 'px';
-        el.style.top = e.clientY + 'px';
-        el.style.opacity = '1';
-        el.style.transform = 'translate(-50%,-50%) scale(1)';
-        rockets.push({ el: el, born: Date.now() });
-        if (!raf) tick();
+        var now = Date.now();
+        var dt = now - lastT;
+        if (dt > 0 && lastT > 0) {
+            var dx = e.clientX - lastX;
+            var dy = e.clientY - lastY;
+            var dist = Math.sqrt(dx * dx + dy * dy);
+            var speed = dist / dt * 1000;
+            if (speed > SPEED_THRESHOLD) {
+                var el = getEl();
+                el.style.left = e.clientX + 'px';
+                el.style.top = e.clientY + 'px';
+                el.style.opacity = '1';
+                el.style.transform = 'translate(-50%,-50%) scale(1)';
+                rockets.push({ el: el, born: now });
+                if (!raf) tick();
+            }
+        }
+        lastX = e.clientX;
+        lastY = e.clientY;
+        lastT = now;
     });
 
     function tick() {
@@ -102,16 +116,16 @@
         { label: 'Home', keys: 'page', href: '/' },
         { label: '@notrocketscience', keys: 'page social nrs company', href: '/@notrocketscience' },
         { label: '@mathiasjakobsen', keys: 'page personal mathias', href: '/@mathiasjakobsen' },
-        { label: 'LinkedIn (company)', keys: 'social linkedin nrs', href: 'https://linkedin.com/company/notrocketscience', ext: true },
+        { label: 'LinkedIn (company)', keys: 'social linkedin nrs', href: 'https://linkedin.com/company/notrs', ext: true },
         { label: 'LinkedIn (personal)', keys: 'social linkedin mathias', href: 'https://linkedin.com/in/mathiasjakobsen', ext: true },
-        { label: 'GitHub (company)', keys: 'social github nrs', href: 'https://github.com/notrocketscience', ext: true },
+        { label: 'GitHub (company)', keys: 'social github nrs', href: 'https://github.com/not-rocket-science-aps', ext: true },
         { label: 'GitHub (personal)', keys: 'social github mathias', href: 'https://github.com/mathiasjakobsen', ext: true },
         { label: 'Email', keys: 'contact mail', href: 'mailto:its@notrocketscience.dk' },
         { label: 'Copy email', keys: 'action copy clipboard', action: function () { navigator.clipboard.writeText('its@notrocketscience.dk'); } },
         { label: 'Call', keys: 'contact phone', href: 'tel:+4593967688' },
         { label: 'Download vCard (company)', keys: 'action download vcf contact', href: '/contact.vcf', download: true },
         { label: 'Download vCard (personal)', keys: 'action download vcf contact mathias', href: '/mathias-jakobsen.vcf', download: true },
-        { label: 'View source', keys: 'action code dev', href: 'https://github.com/notrocketscience/notrocketscience.github.io', ext: true },
+        { label: 'View source', keys: 'action code dev', href: 'https://github.com/not-rocket-science-aps/notrocketscience.github.io', ext: true },
     ];
 
     var overlay, dialog, input, list;
@@ -127,7 +141,7 @@
         dialog = document.createElement('div');
         dialog.setAttribute('role', 'dialog');
         dialog.setAttribute('aria-label', 'Command palette');
-        dialog.style.cssText = 'width:90%;max-width:480px;background:#f5f0e8;color:#2A1E06;border-radius:12px;box-shadow:0 24px 48px rgba(0,0,0,0.2);overflow:hidden;font-family:"Instrument Sans",system-ui,sans-serif;';
+        dialog.style.cssText = 'width:90%;max-width:480px;background:#e2d6c0;color:#2A1E06;border-radius:12px;box-shadow:0 24px 48px rgba(0,0,0,0.2);overflow:hidden;font-family:"Instrument Sans",system-ui,sans-serif;';
 
         input = document.createElement('input');
         input.type = 'text';
@@ -152,10 +166,10 @@
 
         // Dark mode
         if (window.matchMedia('(prefers-color-scheme:dark)').matches) {
-            dialog.style.background = '#2A1E06';
-            dialog.style.color = '#ebe3d5';
-            input.style.color = '#ebe3d5';
-            hr.style.background = 'rgba(235,227,213,0.1)';
+            dialog.style.background = '#1f2d12';
+            dialog.style.color = '#e2d6c0';
+            input.style.color = '#e2d6c0';
+            hr.style.background = 'rgba(226,214,192,0.1)';
         }
 
         render();
@@ -172,7 +186,7 @@
             if (item.download) li.textContent += ' ↓';
             li.style.cssText = 'padding:10px 20px;cursor:pointer;font-size:14px;border-radius:6px;margin:2px 8px;transition:background 0.1s;';
             if (i === active) {
-                li.style.background = window.matchMedia('(prefers-color-scheme:dark)').matches ? 'rgba(235,227,213,0.08)' : 'rgba(31,45,18,0.06)';
+                li.style.background = window.matchMedia('(prefers-color-scheme:dark)').matches ? 'rgba(226,214,192,0.08)' : 'rgba(31,45,18,0.06)';
                 requestAnimationFrame(function () {
                     var lt = list.scrollTop;
                     var lb = lt + list.clientHeight;
